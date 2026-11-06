@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To-Do List & Task Manager</title>
+
+    <!-- Connect CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>My Task Manager</h1>
+        <p class="subtitle">Organize your tasks and manage your time</p>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+        </div>
+
+        <!-- Add Task Form -->
+        <div class="task-form">
+
+            <h2>Add New Task</h2>
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter your task"
+            >
+
+            <input
+                type="date"
+                id="dueDate"
+            >
+
+            <select id="priority">
+                <option value="High">High Priority</option>
+                <option value="Medium" selected>Medium Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+
+            <button id="addButton" onclick="addTask()">
+                Add Task
+            </button>
+
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+
+            <button onclick="filterTasks('All')">All</button>
+            <button onclick="filterTasks('Pending')">Pending</button>
+            <button onclick="filterTasks('Completed')">Completed</button>
+
+        </div>
+
+        <!-- Task List -->
+        <div class="task-section">
+
+            <h2>My Tasks</h2>
+
+            <div id="taskList">
+                <!-- Tasks will appear here -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Connect JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
